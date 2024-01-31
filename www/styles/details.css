@@ -1,0 +1,66 @@
+.b-container {
+    position: relative;
+}
+
+.b-title {
+    color: #fff;
+    text-align: center;
+}
+
+.b-url {
+    text-align: center;
+}
+
+.b-image {
+    min-width: 100%;
+    height: 500px;
+    object-fit: contain;
+    border: 1px solid #000;
+    border-radius: 20px;
+    margin: 20px 0;
+}
+
+.b-validation {
+    padding: 20px;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+.b-validation__item {
+    list-style-type: none;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 10px 0;
+}
+
+.b-validation__item:not(:last-child) {
+    border-bottom: 1px solid #000;
+}
+
+.b-validation__date {
+    width: 100px;
+}
+
+.b-validation__errors {
+    width: 100%;
+    padding-top: 5px;
+    display: none;
+}
+
+.b-validation__errors {
+    display: block;
+}
+
+.b-validation__type {
+    font-size: 20px;
+}
+
+.b-validation__type--pass {
+    color: green;
+}
+
+.b-validation__type--fail {
+    color: red;
+}

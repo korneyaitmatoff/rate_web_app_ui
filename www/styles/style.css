@@ -1,0 +1,191 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    display: grid;
+    grid-template:
+        "header" auto
+        "main" 1fr
+        "footer" auto;
+}
+
+header {
+    grid-area: header;
+}
+
+main {
+    grid-area: main;
+    background: #1a195a;
+    padding: 20px 50px;
+}
+
+footer {
+    grid-area: footer;
+}
+
+button {
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+p,
+ul {
+    margin: 0;
+}
+
+.c-font-white {
+    color: #fff;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
+.c-font-black {
+    color: #000;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
+.b-profile {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: #010048;
+}
+
+.b-profile p {
+    margin: 0;
+    padding: 20px 0;
+    cursor: pointer;
+    transition: color 0.4s ease;
+}
+
+.b-profile p:hover {
+    color: #9999b5;
+}
+
+.b-profile__name.auth,
+.b-profile__name.auth:hover {
+    cursor: default;
+    color: #fff;
+}
+
+.b-sites__validation {
+    max-height: 0;
+    transition: height 0.4s ease;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.b-sites__validation.active {
+    max-height: none;
+}
+
+.b-sites__list {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.b-sites__site {
+    min-width: 300px;
+    width: fit-content;
+    padding: 10px;
+    background-color: #fff;
+    border: 2px solid #010048;
+    border-radius: 20px;
+    position: relative;
+    text-decoration: none;
+}
+
+.b-sites__image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 20px;
+    object-fit: contain;
+}
+
+.b-user {
+    text-align: center;
+    color: #fff;
+}
+
+.b-auth {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0 0 0 / 60%);
+}
+
+.b-auth > div {
+    opacity: 0;
+    z-index: -1;
+    position: absolute;
+    background: #fff;
+    padding: 50px;
+    border-radius: 20px;
+    transition: opacity 0.4s ease;
+}
+
+.b-auth > div.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.link {
+    cursor: pointer;
+    text-decoration: underline;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.link:hover {
+    text-decoration: none;
+}
+
+.b-register__form,
+.b-login__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.b-register__submit,
+.b-login__submit {
+    border: 1px solid #000;
+    padding: 10px;
+    border-radius: 20px;
+    transition: box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+.b-register__submit:hover,
+.b-login__submit:hover {
+    box-shadow: rgba(0 0 0 / 40%) 0 7px 20px;
+}
+
+.input-container {
+    display: flex;
+    gap: 10px;
+}
+
+.input-container label {
+    width: 80px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.disabled {
+    display: none;
+}
