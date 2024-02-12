@@ -186,6 +186,16 @@ ul {
     justify-content: flex-end;
 }
 
+.c-button {
+    background: #fff;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 15px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
 .disabled {
     display: none;
 }

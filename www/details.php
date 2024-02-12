@@ -15,34 +15,12 @@
                 <img class="b-image" src="./images/default.jpg">
                 <p class="c-font-white">Ошибки валидации</p>
                 <ul class="b-validation">
-					<li class="b-validation__item">
-						<p class="b-validation__date c-font-black">21.12.22</p>
-						<p class="b-validation__type b-validation__type--pass">Passed</p>
-					</li>
-					<li class="b-validation__item">
-						<p class="b-validation__date c-font-black">21.12.22</p>
-						<p class="b-validation__type b-validation__type--pass">Passed</p>
-					</li>
-					<li class="b-validation__item">
-						<p class="b-validation__date c-font-black">21.12.22</p>
-						<p class="b-validation__type b-validation__type--fail">Fail</p>
-						<div class="b-validation__errors">
-							<p class="b-validation__error c-font-black">Error 1</p>
-							<p class="b-validation__error c-font-black">Error 2</p>
-							<p class="b-validation__error c-font-black">Error 3</p>
-							<p class="b-validation__error c-font-black">Error 4</p>
-							<p class="b-validation__error c-font-black">Error 5</p>
-						</div>
-					</li>
-					<li class="b-validation__item">
-						<p class="b-validation__date c-font-black">21.12.22</p>
-						<p class="b-validation__type b-validation__type--pass">Passed</p>
-					</li>
-					<li class="b-validation__item">
-						<p class="b-validation__date c-font-black">21.12.22</p>
-						<p class="b-validation__type b-validation__type--pass">Passed</p>
-					</li>
                 </ul>
+				<div class="b-feedback disabled">
+					<p class="c-font-white">Ваш комментарий</p>
+					<textarea class="b-feedback__comment"></textarea>
+					<button class="b-feedback__comment-button c-button">Оставить комментарий</button>
+				</div>
             </div>
         </main>
         <footer>

@@ -14,7 +14,7 @@
                 <div class="b-sites__list">
                 </div>
                 <div class="b-button-container">
-                    <button class="b-load-more disabled">Загрузить ещё</button>
+                    <button class="b-load-more c-button disabled">Загрузить ещё</button>
                 </div>
             </div>
         </main>

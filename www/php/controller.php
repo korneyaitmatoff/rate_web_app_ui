@@ -1,52 +1,53 @@
 <?php
 $post = json_decode(file_get_contents('php://input'), true);
 
-switch($post['url']) {
-    case('user/auth'):
-        print_r(post($post['url'], [
-            'login' => $post['login'],
-            'password' => $post['password']
-        ]));
+switch($post['type']) {
+    case('post'):
+        if(isset($post['port']) && $post['port'] === 83) {
+            print_r(post($post['url'].'?'.http_build_query(['text' => $post['text']]), [], 83, false));
+        } else if(isset($post['auth'])) {
+            print_r(post($post['url'], [
+                'login' => $post['login'],
+                'password' => $post['password']
+            ]));
+        } else {
+            print_r(post($post['url'], [
+                'name' => $post['name'],
+                'login' => $post['login'],
+                'password' => $post['password']
+            ]));
+        }
         break;
-    case('user'):
-        print_r(post($post['url'], [
-            'name' => $post['name'],
-            'login' => $post['login'],
-            'password' => $post['password']
-        ]));
-        break;
-    case(preg_match('/site\/user\/\d+/', $post['url']) ? $post['url'] : !$post['url']):
-        print_r(get($post['url']));
-        break;
-    case(preg_match('/site\?limit=\d+\&offset=\d+/', $post['url']) ? $post['url'] : !$post['url']):
-        print_r(get($post['url']));
-        break;
-    case(preg_match('/site\/\d+/', $post['url']) ? $post['url'] : !$post['url']):
-        print_r(get($post['url']));
+    case('get'):
+        print_r(get($post['url'], isset($post['port']) ? $post['port'] : 82));
         break;
 }
 
-function post($url, $data) {
+function post($url, $data, $port=82, $json=true) {
     $curl = curl_init();
-    $data = json_encode($data);
+    if($json) {
+        $data = json_encode($data);
+    }
     curl_setopt_array($curl, array(
-        CURLOPT_URL => 'http://45.9.43.40/'.$url,
+        CURLOPT_URL => 'http://45.9.43.40:'.$port.'/'.$url,
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_POST => true,
-        CURLOPT_POSTFIELDS => $data,
-        CURLOPT_HTTPHEADER => [
-            'Content-Type: application/json'
-        ]
     ));
+    if($json) {
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, [
+            'Content-Type: application/json'
+        ]);
+    }
     $output = curl_exec($curl);
     curl_close($curl);
     return $output;
 }
 
-function get($url) {
+function get($url, $port=84) {
     $curl = curl_init();
     curl_setopt_array($curl, array(
-        CURLOPT_URL => 'http://45.9.43.40/'.$url,
+        CURLOPT_URL => 'http://45.9.43.40:'.$port.'/'.$url,
         CURLOPT_POST => false,
         CURLOPT_HTTPHEADER => [
             'Content-Type: application/json'

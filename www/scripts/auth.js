@@ -40,7 +40,9 @@ document.addEventListener("DOMContentLoaded", function() {
         let data = {
             url: 'user/auth',
             login: formData.get('login'),
-            password: formData.get('password')
+            password: formData.get('password'),
+            type: 'post',
+            auth: true
         }
         fetch('/php/controller.php', {
             method: 'POST',
@@ -50,7 +52,6 @@ document.addEventListener("DOMContentLoaded", function() {
             body: JSON.stringify(data)
         }).then(function(res) {
             res.json().then(function(text) {
-                console.log(text);
                 let result = text != -1;
                 if(result) {
                     logIn({
@@ -68,7 +69,6 @@ document.addEventListener("DOMContentLoaded", function() {
     document.querySelector('.b-register__form').onsubmit = function(e) {
         e.preventDefault();
         let chck = check(document.querySelector('.b-register__form'));
-        console.log(chck)
         if(!chck) {
             alert('Заполните все поля!');
             return;
@@ -78,7 +78,8 @@ document.addEventListener("DOMContentLoaded", function() {
             url: 'user',
             login: formData.get('login'),
             name: formData.get('name'),
-            password: formData.get('password')
+            password: formData.get('password'),
+            type: 'post',
         }
         fetch('/php/controller.php', {
             method: 'POST',
@@ -92,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     id: json.id,
                     login: json.login,
                     password: json.password
-                })
+                });
             });
         })
     }

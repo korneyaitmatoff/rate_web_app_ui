@@ -6,7 +6,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function getSites() {
 		let data = {
-			url: 'site?limit=' + limit + '&offset=' + offset
+			url: 'site?limit=' + limit + '&offset=' + offset,
+			type: 'get',
+			port: 84
 		}
 		fetch('/php/controller.php', {
 			method: 'POST',

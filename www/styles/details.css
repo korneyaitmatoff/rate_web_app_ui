@@ -33,6 +33,7 @@
     display: flex;
     flex-flow: row wrap;
     padding: 10px 0;
+    cursor: pointer;
 }
 
 .b-validation__item:not(:last-child) {
@@ -45,12 +46,21 @@
 
 .b-validation__errors {
     width: 100%;
-    padding-top: 5px;
+    padding-top: 10px;
     display: none;
 }
 
-.b-validation__errors {
+.b-validation__errors.active {
     display: block;
+}
+
+.b-validation__error {
+    display: flex;
+    gap: 5px;
+}
+
+.b-validation__line-number {
+    width: 50px;
 }
 
 .b-validation__type {
@@ -63,4 +73,18 @@
 
 .b-validation__type--fail {
     color: red;
+}
+
+.b-feedback {
+    margin-top: 20px;
+}
+
+.b-feedback__comment {
+    width: 100%;
+    min-height: 200px;
+    margin-top: 20px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    padding: 20px;
+    font-size: 20px;
 }

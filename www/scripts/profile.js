@@ -10,7 +10,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function getSites() {
         let data = {
-            url: 'site/user/' + sessionStorage.getItem('id')
+            url: 'site/user/' + sessionStorage.getItem('id'),
+            type: 'get',
+            port: 84
         }
         fetch('/php/controller.php', {
             method: 'POST',
