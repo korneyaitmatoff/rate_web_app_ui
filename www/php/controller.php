@@ -5,6 +5,14 @@ switch($post['type']) {
     case('post'):
         if(isset($post['port']) && $post['port'] === 83) {
             print_r(post($post['url'].'?'.http_build_query(['text' => $post['text']]), [], 83, false));
+        } else if(isset($post['port']) && $post['port'] === 84) {
+            $data = [
+                'name' => $post['siteName'],
+                'description' => $post['siteDescription'],
+                'url' => $post['siteUrl'],
+                'user_id' => $post['userId']
+            ];
+            print_r(post($post['url'], $data, 84, true));
         } else if(isset($post['auth'])) {
             print_r(post($post['url'], [
                 'login' => $post['login'],
@@ -26,7 +34,7 @@ switch($post['type']) {
 function post($url, $data, $port=82, $json=true) {
     $curl = curl_init();
     if($json) {
-        $data = json_encode($data);
+        $data = json_encode($data, JSON_UNESCAPED_UNICODE);
     }
     curl_setopt_array($curl, array(
         CURLOPT_URL => 'http://45.9.43.40:'.$port.'/'.$url,

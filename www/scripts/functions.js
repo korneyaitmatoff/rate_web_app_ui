@@ -1,7 +1,6 @@
 function setSites(sites) {
     let block = document.querySelector('.b-sites__list');
     sites.forEach(site => {
-        console.log(site);
         let container = document.createElement('a');
         container.classList.add('b-sites__site');
         container.href = "/details.php?id=" + site.id;
