@@ -110,6 +110,11 @@ ul {
     object-fit: contain;
 }
 
+.b-sites__verify {
+    display: flex;
+    margin: 20px auto 0 !important;
+}
+
 .b-user {
     text-align: center;
     color: #fff;
@@ -206,6 +211,11 @@ ul {
     font-size: 15px;
     margin: 0 auto;
     cursor: pointer;
+}
+
+.c-black-style {
+    background-color: #000;
+    color: #fff;
 }
 
 .disabled {

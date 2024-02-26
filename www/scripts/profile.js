@@ -62,6 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }).then(function(res) {
             res.json().then(function(text) {
                 setSites(text);
+                addVerifyButtons(text);
 
                 if(text.length == 0) {
                     let mes = document.createElement('p');
@@ -84,5 +85,37 @@ document.addEventListener('DOMContentLoaded', function() {
             return true;
         });
         return bool;
+    }
+
+    function addVerifyButtons(sites) {
+        let list = document.querySelectorAll('.b-sites__site');
+        sites.forEach((site, id) => {
+            let btn = document.createElement('button');
+            btn.classList.add('c-button');
+            btn.classList.add('b-sites__verify');
+            btn.classList.add('c-black-style');
+            btn.innerText = "Запуск валидации";
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                let data = {
+                    url: 'html_val',
+                    type: 'post',
+                    port: 81,
+                    siteId: site.id,
+                }
+                fetch('/php/controller.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                }).then(function(res) {
+                    res.json().then(function(text) {
+                        alert('Лог создан!');
+                    });
+                });
+            });
+            list[id].appendChild(btn);    
+        });
     }
 });

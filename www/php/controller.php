@@ -13,6 +13,11 @@ switch($post['type']) {
                 'user_id' => $post['userId']
             ];
             print_r(post($post['url'], $data, 84, true));
+        } else if(isset($post['port']) && $post['port'] === 81) {
+            $data = [
+                'site_id' => $post['siteId']
+            ];
+            print_r(post($post['url'], $data, 81, true));
         } else if(isset($post['auth'])) {
             print_r(post($post['url'], [
                 'login' => $post['login'],

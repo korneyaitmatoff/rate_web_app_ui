@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				dateElement.classList.add('b-validation__date');
 				dateElement.classList.add('c-font-black');
 				let dd = date.getDate() > 10 ? date.getDate() : "0" + date.getDate();
-				let mm = date.getMonth() > 10 ? date.getMonth() : "0" + date.getMonth();
+				let mm = date.getMonth() > 10 ? (date.getMonth() + 1) : "0" + (date.getMonth() + 1);
 				dateElement.innerHTML = dd+"."+mm+"."+date.getFullYear().toString().substr(-2);
 
 				let errorsContainer = document.createElement('div');
