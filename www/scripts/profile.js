@@ -1,4 +1,6 @@
 import setSites from './functions.js';
+import appUrl from './const.js';
+
 
 document.addEventListener('DOMContentLoaded', function() {
     if(sessionStorage.getItem('id')) {
@@ -34,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
             siteUrl: formData.get('url'),
             userId: sessionStorage.getItem('id')
         }
-        fetch('/php/controller.php', {
+        fetch(appUrl, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -53,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
             type: 'get',
             port: 84
         }
-        fetch('/php/controller.php', {
+        fetch(appUrl, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -103,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     port: 81,
                     siteId: site.id,
                 }
-                fetch('/php/controller.php', {
+                fetch(appUrl, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

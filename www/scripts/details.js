@@ -1,3 +1,5 @@
+import appUrl from './const.js';
+
 document.addEventListener("DOMContentLoaded", function() {
     let params = new URLSearchParams(window.location.search);
 	let data = {
@@ -5,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		type: 'get',
 		port: 84
 	}
-	fetch('/php/controller.php', {
+	fetch(appUrl, {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',
@@ -26,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		type: 'get',
 		port: 81
 	}
-	fetch('/php/controller.php', {
+	fetch(appUrl, {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',
@@ -98,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				text: document.querySelector('.b-feedback__comment').value,
 				port: 83
 			}
-			fetch('/php/controller.php', {
+			fetch(appUrl, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',

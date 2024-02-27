@@ -1,4 +1,5 @@
 import setSites from './functions.js';
+import appUrl from './const.js';
 
 document.addEventListener("DOMContentLoaded", function() {
     let limit = 10;
@@ -10,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			type: 'get',
 			port: 84
 		}
-		fetch('/php/controller.php', {
+		fetch(appUrl, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',

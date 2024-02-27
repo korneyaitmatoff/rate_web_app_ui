@@ -1,3 +1,5 @@
+import appUrl from './const.js';
+
 document.addEventListener("DOMContentLoaded", function() {
     let profile = document.querySelector('.b-profile');
     document.querySelectorAll('.link').forEach(link => {
@@ -44,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function() {
             type: 'post',
             auth: true
         }
-        fetch('/php/controller.php', {
+        fetch(appUrl, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -81,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function() {
             password: formData.get('password'),
             type: 'post',
         }
-        fetch('/php/controller.php', {
+        fetch(appUrl, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
