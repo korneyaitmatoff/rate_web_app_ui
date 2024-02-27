@@ -1,4 +1,4 @@
-const appUrl = "rate_web_app_ui/www/php/controller.php";
+const appUrl = "php/controller.php";
 
 document.addEventListener("DOMContentLoaded", function() {
     let profile = document.querySelector('.b-profile');
