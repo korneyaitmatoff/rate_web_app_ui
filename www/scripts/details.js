@@ -1,4 +1,4 @@
-import appUrl from './const.js';
+import appUrl from './const_vars.js';
 
 document.addEventListener("DOMContentLoaded", function() {
     let params = new URLSearchParams(window.location.search);

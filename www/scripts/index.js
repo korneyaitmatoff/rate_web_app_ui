@@ -1,5 +1,5 @@
 import setSites from './functions.js';
-import appUrl from './const.js';
+import appUrl from './const_vars.js';
 
 document.addEventListener("DOMContentLoaded", function() {
     let limit = 10;
