@@ -1,1 +1,0 @@
-const appUrl = "rate_web_app_ui/www/php/controller.php"

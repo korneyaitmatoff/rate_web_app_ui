@@ -1,6 +1,6 @@
 import setSites from './functions.js';
-import appUrl from './const.js';
 
+const appUrl = "rate_web_app_ui/www/php/controller.php";
 
 document.addEventListener('DOMContentLoaded', function() {
     if(sessionStorage.getItem('id')) {

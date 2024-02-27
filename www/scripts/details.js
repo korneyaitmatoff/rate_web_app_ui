@@ -1,4 +1,4 @@
-import appUrl from './const_vars.js';
+const appUrl = "rate_web_app_ui/www/php/controller.php";
 
 document.addEventListener("DOMContentLoaded", function() {
     let params = new URLSearchParams(window.location.search);
